@@ -9,6 +9,11 @@ omni_wheel_controller:
     default_value: [],
     description: "Directions of omni wheels [rad]",
   }
+  omni_wheel_direction: {
+    type: double_array,
+    default_value: [1.0, 1.0, 1.0],
+    description: "Spin direction. Positive means CW for positive commands when facing the wheel."
+  }
   omni_wheel_distance: {
     type: double,
     default_value: 0.0,
