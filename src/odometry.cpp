@@ -123,7 +123,7 @@
      double roller_slip_direction = omni_wheel_yaw[row] - M_PI / 2.0;
      motion_matrix_(row, 0) = omni_wheel_dir[row] * cos(roller_slip_direction) / omni_wheel_radius;
      motion_matrix_(row, 1) = omni_wheel_dir[row] * sin(roller_slip_direction) / omni_wheel_radius;
-     motion_matrix_(row, 2) = - omni_wheel_distance / omni_wheel_radius;
+     motion_matrix_(row, 2) = - omni_wheel_distance * omni_wheel_dir[row] / omni_wheel_radius;
    }
    motion_matrix_inverse_ = motion_matrix_.completeOrthogonalDecomposition().pseudoInverse();
    
